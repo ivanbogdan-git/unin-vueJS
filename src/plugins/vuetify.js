@@ -1,10 +1,14 @@
 import Vue from 'vue';
 import Vuetify from 'vuetify/lib';
 
-Vue.use(Vuetify);
-
-export default new Vuetify({
-  icons: {
-    iconfont: 'mdi',
-  },
+Vue.use(Vuetify, {
+  iconfont: 'md',
 });
+
+const opts = {
+  icons: {
+    iconfont: 'mdi', // default - only for display purposes
+  },
+};
+
+export default new Vuetify(opts);
