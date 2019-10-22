@@ -1,16 +1,14 @@
 <template>
-  <v-app>
-    <template-default />
-  </v-app>
+    <app-template />
 </template>
 
 <script>
-import TemplateDefault from './layouts/TemplateDefault';
+import AppTemplate from './layouts/AppTemplate';
 
 export default {
   name: 'App',
   components: {
-    TemplateDefault,
+    AppTemplate,
   },
   data: () => ({
     //

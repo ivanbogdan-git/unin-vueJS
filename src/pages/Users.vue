@@ -1,28 +1,29 @@
 <template>
-  <v-container app>
+  <v-container>
     <v-layout
       text-center
-      wrap
-    >
-      <v-flex xs12 sm6 lg4>
-        <user
-          v-for="(user, i) in users"
-          :user="user"
-          :key="i"
-        />
-      </v-flex>
+      row
+      wrap>
+      <user
+        v-for="(user, i) in users"
+        :user="user"
+        :key="i"
+      />
     </v-layout>
+    <new-user-dialog/>
   </v-container>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
 import User from '@/components/Users/User';
+import NewUserDialog from '@/components/Users/NewUserDialog';
 
 export default {
   name: 'Users',
   components: {
     User,
+    NewUserDialog,
   },
   computed: {
     ...mapGetters(['users']),

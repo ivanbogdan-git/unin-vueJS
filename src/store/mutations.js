@@ -1,7 +1,8 @@
-import types from './mutationTypes';
+import mutationTypes from './mutationTypes';
 
 export default {
-  [types.ADD_USERS](state, users) {
+  [mutationTypes.ADD_USERS](state, users) {
+    console.log(state, users);
     state.users = users;
   },
 };

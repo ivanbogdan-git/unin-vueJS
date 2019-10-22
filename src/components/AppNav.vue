@@ -18,7 +18,7 @@
             <v-icon>mdi-account-multiple</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>Users</v-list-item-title>
+            <v-list-item-title>MongoDB (Mongoose)</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -26,8 +26,7 @@
     <v-app-bar
       app
       color="indigo"
-      dark
-    >
+      dark>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>UNIN</v-toolbar-title>
     </v-app-bar>
