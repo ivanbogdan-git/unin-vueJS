@@ -62,6 +62,9 @@
 <script>
 export default {
   name: 'NewUserDialog',
+  props: {
+    db: String,
+  },
   data() {
     return {
       dialog: false,
@@ -77,11 +80,11 @@ export default {
   },
   methods: {
     toggleDialog() {
-      console.log('aaa');
       this.dialog = !this.dialog;
     },
     addNewUser() {
-      this.$store.dispatch('postUser', this.user);
+      console.log(this.db);
+      this.$store.dispatch('postUser', { user: this.user, db: this.db });
       this.dialog = false;
     },
   },

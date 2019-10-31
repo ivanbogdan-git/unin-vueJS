@@ -1,34 +1,39 @@
 import mutationTypes from './mutationTypes';
 import api from '../api';
 
+/* eslint no-underscore-dangle: 0 */
+
 export default {
-  getUsers: async ({ commit }) => {
+  getUsers: async ({ commit }, db) => {
     try {
-      commit(mutationTypes.ADD_USERS, await api.getUsers());
+      commit(mutationTypes.ADD_USERS, await api.getUsers(db));
     } catch (err) {
       console.log(err);
     }
   },
-  postUser: async ({ dispatch }, user) => {
+  postUser: async ({ dispatch }, { user, db }) => {
     try {
-      await api.postUser(user);
-      dispatch('getUsers');
+      await api.postUser(user, db);
+      dispatch('getUsers', db);
     } catch (err) {
       console.log(err);
     }
   },
-  putUser: async ({ dispatch }, user) => {
+  putUser: async ({ dispatch }, { user, db }) => {
     try {
-      await api.putUser(user);
-      dispatch('getUsers');
+      console.log(user);
+      console.log(db);
+      await api.putUser(user, db);
+      dispatch('getUsers', db);
     } catch (err) {
       console.log(err);
     }
   },
-  deleteUser: async ({ dispatch }, id) => {
+  deleteUser: async ({ dispatch }, { id, db }) => {
     try {
-      await api.deleteUser(id);
-      dispatch('getUsers');
+      console.log(db);
+      await api.deleteUser(id, db);
+      dispatch('getUsers', db);
     } catch (err) {
       console.log(err);
     }

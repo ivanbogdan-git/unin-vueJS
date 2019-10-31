@@ -60,6 +60,7 @@ export default {
   props: {
     dialog: Boolean,
     user: Object,
+    db: String,
   },
   data() {
     return {
@@ -75,7 +76,8 @@ export default {
   },
   methods: {
     updateExistingUser() {
-      this.$store.dispatch('putUser', this.editedUser);
+      console.log(this.db);
+      this.$store.dispatch('putUser', { user: this.editedUser, db: this.db });
       this.$emit('toggle');
     },
   },

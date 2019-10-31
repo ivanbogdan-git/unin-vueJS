@@ -21,6 +21,14 @@
             <v-list-item-title>MongoDB (Mongoose)</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+        <v-list-item to="/mariadb/users">
+          <v-list-item-action>
+            <v-icon>mdi-account-multiple</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>MariaDB (Sequelize)</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
     <v-app-bar

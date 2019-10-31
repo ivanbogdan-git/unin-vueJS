@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Home from '@/pages/Home';
 import Users from '@/pages/Users';
+import MariaDBUsers from '@/pages/MariaDBUsers';
 import Comments from '@/pages/Comments';
 
 Vue.use(Router);
@@ -24,6 +25,11 @@ export default new Router({
       path: '/comments',
       name: 'comments',
       component: Comments,
+    },
+    {
+      path: '/mariadb/users',
+      name: 'mariadbusers',
+      component: MariaDBUsers,
     },
   ],
 });

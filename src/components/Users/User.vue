@@ -11,12 +11,15 @@
         <v-layout row>
           <v-flex justify-center>
             <v-btn color="primary" @click="dialog = !dialog">Edit</v-btn>
-            <v-btn color="error" @click="$store.dispatch('deleteUser', user._id)">Delete</v-btn>
+            <v-btn color="error" @click="$store.dispatch('deleteUser', {
+              id: user._id || user.id,
+              db
+            })">Delete</v-btn>
           </v-flex>
         </v-layout>
       </v-card-actions>
     </v-card>
-    <edit-user-dialog @toggle="dialog = !dialog" :dialog="dialog" :user="user"/>
+    <edit-user-dialog @toggle="dialog = !dialog" :dialog="dialog" :user="user" :db="db"/>
   </v-flex>
 </template>
 
@@ -30,15 +33,15 @@ export default {
       dialog: false,
     };
   },
-  components: { EditUserDialog },
+  components: {
+    EditUserDialog,
+  },
   props: {
     user: {
       type: Object,
       required: true,
     },
-  },
-  created() {
-    console.log(this.user);
+    db: String,
   },
 };
 </script>
