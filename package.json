@@ -15,7 +15,7 @@
     "test:unitWatch": "vue-cli-service test:unit --watch"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "core-js": "^3.1.2",
     "lodash": "^4.17.11",
     "numeral": "^2.0.6",
